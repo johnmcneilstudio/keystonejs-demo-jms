@@ -72,11 +72,3 @@ These seem to be analogous to Rails migrations but it remains to be seen if thes
 
 Cool. Things seem to be working. I can add content. And view my site. Now what?
 Lets push it to the cloud for the world to see. Okay. Done. Let's take a look.
-http://keystonejs-demo-jms.herokuapp.com/ returns an error.
-Cloudinary is not configured according to Heroku logs.
-Cloudinary breaks because there is no '.env' file.
-This file contains two lines at this stage.
-.env is gitignored as it should be.
-But it contains the Cloudinary configuration (a Cloudinary url) and a cookie secret.
-
-heroku config:set to the rescue
