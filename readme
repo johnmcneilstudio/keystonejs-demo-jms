@@ -77,10 +77,6 @@ Cloudinary is not configured according to Heroku logs.
 Cloudinary breaks because there is no '.env' file.
 This file contains two lines at this stage.
 .env is gitignored as it should be.
-But it contains the Cloudinary configuration (a Cloudinary url).
-Even though I chose not to use Cloudinary it seems that the gallery and post models
-are using it. Let's fix that.
-Commenting out the cloudinary image fields in the
+But it contains the Cloudinary configuration (a Cloudinary url) and a cookie secret.
 
-So it seems that .env needs to be available for the app.
-I'm going to remove it from gitignore for now and add it back later.
+heroku config:set to the rescue
