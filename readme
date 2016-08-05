@@ -72,3 +72,40 @@ These seem to be analogous to Rails migrations but it remains to be seen if thes
 
 Cool. Things seem to be working. I can add content. And view my site. Now what?
 Lets push it to the cloud for the world to see. Okay. Done. Let's take a look.
+
+http://keystonejs-demo-jms.herokuapp.com/ returns an error.
+Cloudinary is not configured according to Heroku logs.
+Cloudinary breaks because there is no '.env' file.
+This file contains two lines at this stage.
+.env is gitignored as it should be.
+But it contains the Cloudinary configuration (a Cloudinary url) and a cookie secret.
+And without these things the app seems unhappy.
+
+heroku config:set to the rescue. The values in .env can be set in this manner.
+
+heroku config:set COOKIE_SECRET=4b6...
+heroku config:set CLOUDINARY_URL: cloudinary://3337...
+
+These values will correspond to the values in .env after setup.
+
+Now we need a MongoDB instance
+
+> heroku addons:create mongolab:sandbox
+
+After installation:
+
+> heroku config
+
+=== keystonejs-demo-jms Config Vars
+CLOUDINARY_URL: cloudinary://333779167276662:_8jbSi9FB3sWYrfimcl8VKh34rI@keystone-demo
+COOKIE_SECRET:  4b617d824a81d5b347083f068cab2fb483bc66a3b585a2c3244c92747dde6b6f15f6c2b77800d0bbdae142c47ae280de5e7c3c3cfee8d4208456f09ceef2ee09
+MONGODB_URI:    mongodb://heroku_1w13v94f:n95vkjffediq5460c0n04sfsvv@ds145355.mlab.com:45355/heroku_1w13v94f
+:   mongodb://heroku_1w13v94f:n95vkjffediq5460c0n04sfsvv@ds145355.mlab.com:45355/heroku_1w13v94f
+
+Duplicated the MONGODB_URI environment variable provided by the mlab MongoDB addon as 'MONGOLAB_URI'.
+KeystoneJS is looking for MONGOLAB_URI value.
+
+But now we are installed.
+None of the above is necessary for development now that the instance is up.
+
+On to customizing...
