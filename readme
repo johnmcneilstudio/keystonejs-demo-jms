@@ -38,3 +38,34 @@ Welcome to KeystoneJS.
 ? ------------------------------------------------
     Finally, would you like to include extra code comments in
     your project? If you're new to Keystone, these may be helpful. Yes
+
+=======
+
+Including posts and galleries in the scaffolding will provide a couple of starter content types.
+
+Initial Structure of the site
++-models
++-public
++-routes
++-templates
++-updates
+
+'models' contains Javascript files defining the content types to be served.
+There is one file per content type. http://keystonejs.com/docs/database/
+
+'public' contains static assets
+
+'routes' contain your applications views and controllers.
+
+'routes/views' will contain javascript files, again one per model.
+These files contain application login to interact models and render views.
+If you are fluent in MVC these files could be considered the 'controllers' in the app.
+So the name might be misleading, but don't let the smooth taste fool you.
+KeystoneJS describes itself as MV* for those keeping score.
+
+'templates' has one folder 'views'
+
+'updates' contains scripts to used to update data.
+These seem to be analogous to Rails migrations but it remains to be seen if these are as robust.
+
+========
