@@ -100,12 +100,20 @@ After installation:
 CLOUDINARY_URL: cloudinary://333779167276662:_8jbSi9FB3sWYrfimcl8VKh34rI@keystone-demo
 COOKIE_SECRET:  4b617d824a81d5b347083f068cab2fb483bc66a3b585a2c3244c92747dde6b6f15f6c2b77800d0bbdae142c47ae280de5e7c3c3cfee8d4208456f09ceef2ee09
 MONGODB_URI:    mongodb://heroku_1w13v94f:n95vkjffediq5460c0n04sfsvv@ds145355.mlab.com:45355/heroku_1w13v94f
-:   mongodb://heroku_1w13v94f:n95vkjffediq5460c0n04sfsvv@ds145355.mlab.com:45355/heroku_1w13v94f
+MONGOLAB_URI:   mongodb://heroku_1w13v94f:n95vkjffediq5460c0n04sfsvv@ds145355.mlab.com:45355/heroku_1w13v94f
 
 Duplicated the MONGODB_URI environment variable provided by the mlab MongoDB addon as 'MONGOLAB_URI'.
 KeystoneJS is looking for MONGOLAB_URI value.
+Another quirk. Still keeping the faith...
 
 But now we are installed.
 None of the above is necessary for development now that the instance is up.
 
 On to customizing...
+
+========
+
+The default page container is a file templates/views/layouts/default.hbs
+We chose handlebars as our templating engine so our templates are handlebars templates with .hbs extensions.
+
+The home page content is in /templates/views/index.hbs
